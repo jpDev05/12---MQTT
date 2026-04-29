@@ -21,7 +21,7 @@ void registrarCallbackMensagem(CallbackMensagemMQTT callback);
 
 
 
-
+int obterTotalTopicosRecebimento();
 
 
 

@@ -226,3 +226,25 @@ void publicarMensagem(const char *topico, const char *mensagem)
         debugErro("Falha ao publicar mensagem no tópico: " + String(topico));
     }
 }
+
+void publicarMensagemNoTopico(int indiceTopico, const char *mensagem)
+{
+    const char *topico = obterTopicoPublicacao(indiceTopico);
+
+    if (strlen(topico) == 0)
+    {
+        debugErro("Não foi possivel publicar. Índice de tópico inválido : " + String(indiceTopico));
+        return;
+    }
+    publicarMensagem(topico, mensagem);
+}
+
+bool mqttEstaConectado()
+{
+    return mqttClient.connected();
+}
+
+int obterTotalTopicosRecebimento()
+{
+    return TOTAL_TOPICOS_RECEBER;
+}
