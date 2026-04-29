@@ -31,8 +31,14 @@ const char* TOPICOS_PUBLICAR[] = {
 
 const int TOTAL_TOPICOS_PUBLICAR = 3;
 
+const char* TOPICOS_RECEBER[]= {
+    "senai/esp32/comando",
+    "senai/esp32/config",
+    "senai/esp32/display"
+};
 
 
+const int TOTAL_TOPICOS_RECEBER = 3;
 
 
 

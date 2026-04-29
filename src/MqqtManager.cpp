@@ -14,7 +14,7 @@ WiFiClient wifiClient;
 WiFiClientSecure wifiClientSecure;
 PubSubClient mqqtClient;
 
-CallBackMensagemMQTT callbackDaAplicacao = nullptr;
+CallbackMensagemMQTT callbackDaAplicacao = nullptr;
 
 void registrarCallbackMensagem(CallbackMensagemMQTT callback)
 {
@@ -33,5 +33,12 @@ else
 
 const char* obterTopicoPublicacao(int indiceTopico)
 {
+  if(indiceTopico < 0 || indiceTopico >= TOTAL_TOPICOS_PUBLICAR)
+  {
+    debugErro("índice inválido para tópico de publicação: " + String(indiceTopico));
+    return "";
+  }
 
+  return TOPICOS_PUBLICAR[indiceTopico];
+  
 }
