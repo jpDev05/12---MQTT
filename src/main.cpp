@@ -1,19 +1,31 @@
 #include <Arduino.h>
-#include <WiFi.h>
-#include <WiFiClientSecure.h>
+
 #include "WiFiManager.h" 
+#include "MqttManager.h"
+#include "DebugManager.h"
 
-// void conectarWiFi();
+void tratarMensagemRecebida(const char* topico, const String& mensagem);
 
-// void garantirWiFiConectado();
 
 void setup() 
 {
-   Serial.begin(9600);
+   configurarDebug();
    conectarWiFi();
+   configurarMQTT();
+   registrarCallbackMensagem(tratarMensagemRecebida);
+   conectarMQTT();
+
 }
 
 void loop() 
 {
    garantirWiFiConectado();
+   garantirMQTTConectado();
+   loopMQTT();
+}
+
+
+void tratarMensagemRecebida(const char* topico, const String& mensagem)
+{
+
 }
