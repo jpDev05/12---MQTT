@@ -1,50 +1,41 @@
 //! secrets
 #ifndef SECRETS_H
 #define SECRETS_H
+
 const char *WIFI_SSID = "SALA 09";
 const char *WIFI_SENHA = "info@134";
-
 
 //=============================
 // MQTT
 //=============================
 
-const char* MQTT_BROKER = "broker.hivemq.com";
+const bool USAR_AWS_IOT = false;
+const char *MQTT_BROKER = "broker.hivemq.com";
 const int MQTT_PORTA = 1883;
 
+const char *MQTT_CLIENT_ID = "esp_joao_oliveira";
 
-const char* MQTT_CLIENT_ID = "esp_joao_oliveira";
+const char *MQTT_USUARIO = "";
+const char *MQTT_SENHA = "";
 
-const char* MQTT_USUARIO = "";
-const char* MQTT_SENHA = "";
+const bool MQTT_USAR_TLS = false; // modo de cnexao sem segurança
 
-const bool MQTT_USAR_TLS = false;// modo de cnexao sem segurança
+const char *MQTT_CERTIFICADO_CA = "";
 
-const char* MQTT_CERTIFICADO_CA = "";
-
-const char* TOPICOS_PUBLICAR[] = {
+const char *TOPICOS_PUBLICAR[] = {
 
     "senai/esp32/status",
     "senai/esp32/log",
-    "senai/esp32/resposta"
-};
+    "senai/esp32/resposta"};
 
 const int TOTAL_TOPICOS_PUBLICAR = 3;
 
-const char* TOPICOS_RECEBER[]= {
+const char *TOPICOS_RECEBER[] = {
     "senai/esp32/comando",
     "senai/esp32/config",
-    "senai/esp32/display"
-};
-
+    "senai/esp32/display"};
 
 const int TOTAL_TOPICOS_RECEBER = 3;
-
-
-
-
-
-
 
 //=============================
 // DEBUG

@@ -54,6 +54,7 @@ void conectarWiFi()
         debugErro("Verifique as credenciais e tente novamente.");
     }
 }
+
 void garantirWiFiConectado()
 {
     if (WiFi.status() != WL_CONNECTED)
