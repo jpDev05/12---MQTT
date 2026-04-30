@@ -106,7 +106,7 @@ void configurarMQTT()
     debugInfo("Callback interno do MQTT configurado.");
 }
 
-void conectaMQTT()
+void conectarMQTT()
 {
     if (!wifiEstaConectado())
     {

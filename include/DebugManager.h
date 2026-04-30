@@ -10,7 +10,6 @@
 void configurarDebug();
 
 void debugErro(const String &mensagem);
-
 void debugInfo(const String &mensagem);
 
 void debugErroSemLinha(const String &mensagem);

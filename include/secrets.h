@@ -2,40 +2,34 @@
 #ifndef SECRETS_H
 #define SECRETS_H
 
-const char *WIFI_SSID = "SALA 09";
-const char *WIFI_SENHA = "info@134";
+extern const char *WIFI_SSID ;
+extern const char *WIFI_SENHA ;
+
 
 //=============================
 // MQTT
 //=============================
 
-const bool USAR_AWS_IOT = false;
-const char *MQTT_BROKER = "broker.hivemq.com";
-const int MQTT_PORTA = 1883;
+extern const bool USAR_AWS_IOT ;
+extern const char *MQTT_BROKER ;
+extern const int MQTT_PORTA ;
 
-const char *MQTT_CLIENT_ID = "esp_joao_oliveira";
+extern const char *MQTT_CLIENT_ID ;
 
-const char *MQTT_USUARIO = "";
-const char *MQTT_SENHA = "";
+extern const char *MQTT_USUARIO ;
+extern const char *MQTT_SENHA ;
 
-const bool MQTT_USAR_TLS = false; // modo de cnexao sem segurança
+extern const bool MQTT_USAR_TLS ; // modo de cnexao sem segurança
 
-const char *MQTT_CERTIFICADO_CA = "";
+extern const char *MQTT_CERTIFICADO_CA;
 
-const char *TOPICOS_PUBLICAR[] = {
+extern const char *TOPICOS_PUBLICAR[] ;
 
-    "senai/esp32/status",
-    "senai/esp32/log",
-    "senai/esp32/resposta"};
+extern const int TOTAL_TOPICOS_PUBLICAR ;
 
-const int TOTAL_TOPICOS_PUBLICAR = 3;
+extern const char *TOPICOS_RECEBER[] ;
 
-const char *TOPICOS_RECEBER[] = {
-    "senai/esp32/comando",
-    "senai/esp32/config",
-    "senai/esp32/display"};
-
-const int TOTAL_TOPICOS_RECEBER = 3;
+extern const int TOTAL_TOPICOS_RECEBER ;
 
 //=============================
 // DEBUG
@@ -44,9 +38,9 @@ const int TOTAL_TOPICOS_RECEBER = 3;
 // 0 = sem mensagens
 // 1 = apenas erros
 // 2 = todas as mensagens
-#define DEBUG_NIVEL_INICIAL 2
+extern const int DEBUG_NIVEL_INICIAL ;
 
 // Pino usado para forçar todas as mensagens na inicialização
-#define PINO_HABILITA_DEBUG_COMPLETO 4
+extern const int PINO_HABILITA_DEBUG_COMPLETO ;
 
 #endif // SECRETS_H

@@ -27,7 +27,7 @@ void debugInfo(const String &mensagem)
 
     if (nivelDebugAtual >= DEBUG_TUDO)
     {
-        Serial.print("[ERRO] ");
+        Serial.print("[INFO] ");
         Serial.println(mensagem);
     }
 }
@@ -72,3 +72,6 @@ void configurarDebug()
         debugInfo("Debug iniciado em modo completo");
     debugInfo("====================================");
 }
+
+
+//TODO Criar a função obterNivelDebugAtual
