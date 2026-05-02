@@ -1,8 +1,8 @@
 #include "secrets.h"
 
 
-const char *WIFI_SSID = "SALA 09";
-const char *WIFI_SENHA = "info@134";
+const char *WIFI_SSID = "CRISTINA";
+const char *WIFI_SENHA = "cristina";
 
 
 //TODO transformar todas as constantes em extern
