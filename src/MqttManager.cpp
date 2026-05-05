@@ -87,15 +87,38 @@ void configurarMQTT()
     {
         // TODO: IMPLEMENTAR CONEXÃO COM A AWS
     }
-    else if (MQTT_USAR_TLS)
+    else if (MQTT_TLS)
     {
-        // TODO: IMPLEMENTAR CONEXÃO COM CERTIFICADO
+        debugInfo("Modo selecionado: MQTT com TLS.");
+
+        if (strlen(MQTT_CERTIFICADO_CA) > 100)
+        {
+            debugInfo("Certificado CA broker MQTT configurado.");
+            wifiClientSecure.setCACert(MQTT_CERTIFICADO_CA);
+        }
+
+        else
+        {
+            debugErro("Certificado CA do MQTT não configurado. Usando setInsecure apenas para teste.");
+            wifiClientSecure.setInsecure();
+        }
+
+
+         debugInfo("Modo Selecionado: MQTT sem TLS.");
+
+        mqttClient.setClient(wifiClientSecure);
+        mqttClient.setServer(MQTT_BROKER, MQTT_PORTA);
+
+        debugInfo("Broker MQTT: " + String(MQTT_BROKER));
+        debugInfo("Broker MQTT: " + String(MQTT_PORTA));
     }
+
+
     else // conectar no broker sem certificado
     {
-        debugInfo("Modo Selecionado: MQTT sme TLS.");
+        debugInfo("Modo Selecionado: MQTT sem TLS.");
 
-        mqttClient.setClient(wifiClient);
+        mqttClient.setClient(wifiClientSecure);
         mqttClient.setServer(MQTT_BROKER, MQTT_PORTA);
 
         debugInfo("Broker MQTT: " + String(MQTT_BROKER));
@@ -139,6 +162,8 @@ void conectarMQTT()
                 debugInfo("Conectando MQTT com usuário e senha");
 
                 conectado = mqttClient.connect(MQTT_CLIENT_ID, MQTT_USUARIO, MQTT_SENHA);
+
+                debugInfo(String(conectado));
             }
             else // Sem usuário.
             {

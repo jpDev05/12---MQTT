@@ -10,6 +10,8 @@ extern const char *WIFI_SENHA ;
 // MQTT
 //=============================
 
+extern const bool MQTT_TLS;
+
 extern const bool USAR_AWS_IOT ;
 extern const char *MQTT_BROKER ;
 extern const int MQTT_PORTA ;
@@ -21,7 +23,7 @@ extern const char *MQTT_SENHA ;
 
 extern const bool MQTT_USAR_TLS ; // modo de cnexao sem segurança
 
-extern const char *MQTT_CERTIFICADO_CA;
+extern const char MQTT_CERTIFICADO_CA[];
 
 extern const char *TOPICOS_PUBLICAR[] ;
 
