@@ -13,8 +13,7 @@ void publicarMensagemNoTopico(int indiceTopico, const char *mensagem);
 
 bool mqttEstaConectado();
 
-//TODO criar as funções publicarMensagem e publicarMensagemNoTopico
-//TODO criar parametro do tipo int chamado indiceTopico para as funções abaixo
+
 const char *obterTopicoPublicacao(int indiceTopico);
 const char *obterTopicoRecebimento(int indiceTopico);
 
